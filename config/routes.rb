@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  root "static_pages#home"
-  get "/help",    to: "static_pages#help"
-  get "/about",   to: "static_pages#about"
-  get "/contact", to: "static_pages#contact"
-  get "/signup",  to: "users#new"
+  root      "static_pages#home"
+  get       "/help",    to: "static_pages#help"
+  get       "/about",   to: "static_pages#about"
+  get       "/contact", to: "static_pages#contact"
+  get       "/signup",  to: "users#new"
+  get       "/login",   to: "sessions#new"
+  post      "/login",   to: "sessions#create"
+  delete    "/login",   to: "sessions#destroy"
   resources :users
+  #↑この:usersはシンボルでもキーでもなくルート名と呼ばれる文字列。
+  #resourcesのようなルーティング生成をするメソッドのことをリソースルーティングヘルパーという
+  
 end
 
 #resources :usersを追加することで使えるようになる名前付きルーティング
