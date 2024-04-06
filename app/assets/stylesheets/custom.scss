@@ -9,7 +9,6 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
-
 /* forms */
 input, textarea {
   border: 1px sokid #bbb;
@@ -21,7 +20,7 @@ input, textarea {
 input {
   height: auto !important;
 }
-
+ 
 #error_explanation {
   color: red;
   ul {
@@ -105,7 +104,6 @@ p {
 
 
 /* footer */
-
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -128,6 +126,24 @@ footer {
       margin-left: 15px;
     }
   }
+}
+@media (max-width: 800px) {
+  footer {
+    small {
+      display: block;
+      float: none;
+      margin-bottom: 1em;
+    }
+    ul {
+      float: none;
+      padding: 0;
+      li {
+        float: none;
+        margin-left: 0;
+      }
+    }
+  }
+}
   /* miscellaneous */
 
   .debug_dump {
@@ -136,8 +152,6 @@ footer {
     width: 100%;
     margin-top: 45px;
   }
-}
-
 /* sidebar */
 
 aside {
