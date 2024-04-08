@@ -1,4 +1,5 @@
 ENV["RAILS_ENV"] ||= "test"
+#||=は、左辺の式がnilの場合、右辺の式を評価して代入、nilでない場合はそのまま何もしない。
 require_relative "../config/environment"
 require "rails/test_help"
 require "minitest/reporters"
@@ -11,6 +12,10 @@ class ActiveSupport::TestCase
   # test/fixtures/*.ymlにあるすべてのfixtureをセットアップする
   fixtures :all
   include ApplicationHelper
-
   # （すべてのテストで使うその他のヘルパーメソッドは省略）
+
+  #テストユーザーがログイン中の場合にtrueを返す
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
 end
