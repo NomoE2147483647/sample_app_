@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   post      "/login",   to: "sessions#create"
   delete    "/logout",   to: "sessions#destroy"
   resources :users
+end
   #↑この:usersはシンボルでもキーでもなくルート名と呼ばれる文字列。
   #resourcesのようなルーティング生成をするメソッドのことをリソースルーティングヘルパーという
-  
-end
 
 #resources :usersを追加することで使えるようになる名前付きルーティング
 #GET	  /users	      index	  users_path	          すべてのユーザーを一覧するページ
